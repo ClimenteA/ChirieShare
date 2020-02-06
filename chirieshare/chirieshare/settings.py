@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Custom apps
+    'utilizatori'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'chirieshare.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +68,10 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static") ]
+
+
 
 WSGI_APPLICATION = 'chirieshare.wsgi.application'
 
@@ -79,6 +85,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+# https://docs.djangoproject.com/en/3.0/topics/auth/customizing/
+AUTH_USER_MODEL = "utilizatori.Utilizator"
 
 
 # Password validation
@@ -103,9 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ro'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Bucharest'
 
 USE_I18N = True
 
@@ -118,3 +128,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Media files (profile images, files, videos, etc)
+# https://wsvincent.com/django-image-uploads/
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+# Config gmail smtp
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'chirieshare@gmail.com'
+
+# with open("/home/alincmt/Documents/mypass.txt") as f:
+#    gmail_pass = f.read().strip()
+
+EMAIL_HOST_PASSWORD = "gmail_pass"
