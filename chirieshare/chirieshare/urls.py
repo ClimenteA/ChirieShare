@@ -18,7 +18,7 @@ from django.urls import path
 import utilizatori.views as u
 
 urlpatterns = [
-    path("inregistrare/", u.inregistrare, name="inregistrare"),
+    path("auth/", u.auth, name="auth"),
     path('admin/', admin.site.urls),
 ]
 

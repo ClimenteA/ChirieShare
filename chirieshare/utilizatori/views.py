@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 
-def inregistrare(request):
-    return render(request, "register.html")
+def auth(request):
+    return render(request, "authentificate.html")
 
