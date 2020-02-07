@@ -8,25 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'tailwind.min.css' %}" />
     <link rel="stylesheet" href="{% static 'materialize.min.css' %}" />
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     {% block head %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body>
+<body class="grey lighten-4">
 
     <header>
 
-        <nav>
+        <nav class="bg-purple-900">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Logo</a>
+                <a href="#" class="brand-logo ml-2"><span class="inline-block"><svg width="26" height="22"
+                            viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 13H16.5C15.8096 13 15.25 13.5596 15.25 14.25V20.5C15.25 21.1904 15.8096 21.75 16.5 21.75H24C24.6904 21.75 25.25 21.1904 25.25 20.5V14.25C25.25 13.5596 24.6904 13 24 13Z"
+                                fill="#F6F6F6" />
+                            <path
+                                d="M21.0633 1.65961L1.6266 18.0328C0.866327 18.6732 0.769181 19.8087 1.40962 20.569C2.05007 21.3293 3.18557 21.4264 3.94585 20.786L23.3826 4.41281C24.1428 3.77237 24.24 2.63686 23.5995 1.87659C22.9591 1.11631 21.8236 1.01917 21.0633 1.65961Z"
+                                fill="#F6F6F6" />
+                        </svg></span><span class="inline-block font-medium ml-2">chirieshare</span></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+                    <li><a href="" class="font-medium">Sass</a></li>
+                    <li><a href="badges.html" class="font-medium">Components</a></li>
+                    <li><a href="collapsible.html" class="font-medium">JavaScript</a></li>
                 </ul>
-                <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-down"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="slide-out" class="sidenav-trigger show-on-medium-and-down"><i
+                        class="material-icons">menu</i></a>
             </div>
         </nav>
 
@@ -34,9 +44,9 @@
             <li>
                 <div class="user-view">
                     <div class="background">
-                        <img src="https://via.placeholder.com/150">
+                        <img src="#">
                     </div>
-                    <a href="#user"><img class="circle" src="https://via.placeholder.com/150"></a>
+                    <a href="#user"><img class="circle" src="#"></a>
                     <a href="#name"><span class="white-text name">John Doe</span></a>
                     <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                 </div>
@@ -61,8 +71,7 @@
 
 
 
-
-    <footer class="page-footer">
+    <footer class="bg-purple-900 py-4 text-white">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -83,12 +92,11 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2014 Copyright Text
+                © 2020 Copyright Text
                 <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
         </div>
     </footer>
-
 
     <script src="{% static 'materialize.min.js' %}"></script>
     <script src="{% static 'scripts.js' %}"></script>
@@ -103,7 +111,7 @@
     {% endfor %}
 
     <script>
- 
+
         document.addEventListener("DOMContentLoaded", function (event) {
 
             let tag = document.getElementById("tag").innerText;

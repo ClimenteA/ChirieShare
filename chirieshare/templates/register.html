@@ -7,8 +7,64 @@
 
 {% block content %}
 
+<div class="grid justify-center my-16 mx-3">
 
+    <div class="card w-128">
 
+        <div class="card-content  w-128 row">
 
+            <ul class="tabs col s12">
+                <li class="tab font-medium col s6"><a class="active" href="#login">Intra in cont</a></li>
+                <li class="tab font-medium col s6"><a href="#register">Creeaza un cont</a></li>
+            </ul>
+
+            <div id="login">
+                <form action="#" method="POST" class="md:p-8 p-4 flex flex-col content-center justify-center">
+                    {% csrf_token %}
+
+                    <div class="input-field">
+                        <span class="text-base font-medium">Email:</span>
+                        <input id="Email" type="email" class="validate">
+                    </div>
+                    <div class="input-field mt-10">
+                        <span class="text-base font-medium">Parola:</span>
+                        <input id="Parola" type="text" class="validate">
+                        <span class="helper-text right"><a href="#">Ti-ai uitat parola?</a></span>
+                    </div>
+                    <button type="submit" class="mt-8 btn-large waves-effect waves-light font-medium">
+                        Intra in cont
+                    </button>
+                </form>
+            </div>
+
+            <div id="register" class="">
+
+                <form action="#" method="POST" class="md:p-8 p-4 flex flex-col content-center justify-center">
+                    {% csrf_token %}
+
+                    <div class="input-field">
+                        <span class="text-base font-medium">Email:</span>
+                        <input id="Email" type="email" class="validate">
+                    </div>
+                    <div class="input-field mt-10">
+                        <span class="text-base font-medium">Parola:</span>
+                        <input id="Parola" type="text" class="validate">
+                    </div>
+                    <div class="input-field mt-10">
+                        <span class="text-base font-medium">Confirma parola:</span>
+                        <input id="Parola1" type="text" class="validate">
+                    </div>
+                    <button type="submit" class="mt-8 btn-large waves-effect waves-light font-medium">
+                        Creeaza cont
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
