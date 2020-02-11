@@ -7,17 +7,145 @@
 
 {% block content %}
 
+<!-- Filtre -->
+
+<section class="sm:mx-4">
+
+    <div class="grid max-w-5xl m-0 m-auto my-8">
+
+        <div class="card rounded-md">
+
+            <div class="card-content row">
+
+                <ul class="tabs col m12">
+                    <li class="tab font-medium col m6 s12"><a class="active" href="#filtre-de-baza">Filtre de baza</a>
+                    </li>
+                    <li class="tab font-medium col m6 s12"><a href="#filtre-avansate">Filtre avansate</a></li>
+                </ul>
+
+                <div id="filtre-de-baza">
+
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+
+                        <div class="md:p-8 p-4 grid md:grid-cols-2 sm:grid-cols-1 gap-4">
+
+                            <div class="input-field">
+                                <span class="text-base font-medium">In localitatea:</span>
+                                <input id="localitate" type="text" class="validate"
+                                    placeholder="Iasi, Bucuresti, Cluj..">
+                            </div>
+
+                            <div class="input-field">
+                                <span class="text-base font-medium">Pret de la:</span>
+                                <input id="pret" type="tel" class="validate" placeholder="200 euro">
+                            </div>
+
+                        </div>
 
 
-<section class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 max-w-5xl m-0 m-auto">
+                        <div class="grid grid-cols-1">
+                            <button type="submit" class="btn-large waves-effect waves-light font-medium">
+                                Cauta
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div id="filtre-avansate" class="">
+
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+
+                        <div class="md:p-8 p-4 grid md:grid-cols-3 sm:grid-cols-1 gap-4">
+
+                            <div class="input-field">
+                                <span class="text-base font-medium">In localitatea:</span>
+                                <input id="localitate" type="text" class="validate"
+                                    placeholder="Iasi, Bucuresti, Cluj..">
+                            </div>
+
+                            <div class="input-field">
+                                <span class="text-base font-medium">Pret de la:</span>
+                                <input id="pret" type="tel" class="validate" placeholder="200 euro">
+                            </div>
+
+                            <div class="input-field">
+                                <span class="text-base font-medium">Data mutarii:</span>
+                                <input type="text" class="datepicker" placeholder="Oricand">
+                            </div>
+
+                        </div>
 
 
-    <div class="w-full max-w-sm overflow-hidden rounded-md shadow hoverable">
+
+                        <div class="md:px-8 px-4 grid">
+
+                            <div class="switch">
+                                <label>
+                                    <span class="text-base font-medium text-black">Caut colegi</span>
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+
+
+                            <div class="input-field col s12">
+                                <span class="text-base font-medium text-black">Alte filtre</span>
+                                <select multiple>
+                                    <option value="" disabled selected>Alege filtre</option>
+                                    <option value="2">Balcon</option>
+                                    <option value="1">Centrala termica</option>
+                                    <option value="3">Exclus parter</option>
+                                    <option value="3">Constructie noua</option>
+                                    <option value="3">Mobilat complet</option>
+                                    <option value="3">Pet friendly</option>
+                                    <option value="3">Fumatul interzis</option>
+                                    <option value="3">Accepta doar fete</option>
+                                    <option value="3">Accepta doar baieti</option>
+                                    <option value="3">Accepta fete/baieti</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="grid grid-cols-1 mt-8">
+                            <button type="submit" class="btn-large waves-effect waves-light font-medium">
+                                Cauta
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- Anunturi -->
+
+<section class="grid md:grid-cols-2 sm:grid-cols-1 gap-6 max-w-5xl m-0 m-auto place-items-center md:px-5 sm:px-8">
+
+
+    <div class="w-full overflow-hidden rounded-md shadow hoverable">
         <div class="relative">
             <div class="h-48 bg-cover bg-no-repeat bg-center"
                 style="background-image: url(https://picsum.photos/245/245">
             </div>
-            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white bg-purple-900">€ 16.80</div>
+            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white teal darken-2">€ 16.80</div>
             <div class="absolute right-0 w-12 mr-3" style="bottom:-20px;">
                 <a href="#">
                     <img class="rounded-full border-2 border-white"
@@ -49,12 +177,12 @@
 
 
 
-    <div class="w-full max-w-sm overflow-hidden rounded-md shadow hoverable">
+    <div class="w-full overflow-hidden rounded-md shadow hoverable">
         <div class="relative">
             <div class="h-48 bg-cover bg-no-repeat bg-center"
                 style="background-image: url(https://picsum.photos/245/245">
             </div>
-            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white bg-purple-900">€ 16.80</div>
+            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white teal darken-2">€ 16.80</div>
             <div class="absolute right-0 w-12 mr-3" style="bottom:-20px;">
                 <a href="#">
                     <img class="rounded-full border-2 border-white"
@@ -81,45 +209,12 @@
     </div>
 
 
-    <div class="w-full max-w-sm overflow-hidden rounded-md shadow hoverable">
+    <div class="w-full overflow-hidden rounded-md shadow hoverable">
         <div class="relative">
             <div class="h-48 bg-cover bg-no-repeat bg-center"
                 style="background-image: url(https://picsum.photos/245/245">
             </div>
-            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white bg-purple-900">€ 16.80</div>
-            <div class="absolute right-0 w-12 mr-3" style="bottom:-20px;">
-                <a href="#">
-                    <img class="rounded-full border-2 border-white"
-                        src="https://randomuser.me/api/portraits/women/17.jpg">
-                </a>
-            </div>
-        </div>
-
-        <div class="px-3 pb-3">
-            <h3 class="mr-10 text-sm truncate-2nd">
-                <a class="text-xl font-medium text-black"
-                    href="/huawwei-p20-pro-complete-set-with-box-a.7186128376">Some Title
-                    Here</a>
-            </h3>
-            <div class="flex items-start justify-between">
-                <p class="text-xs text-gray-500">Quezon City, Metro Manila</p>
-                <button class="outline text-xs text-gray-500 hover:text-blue-500" title="Bookmark this ad"><i
-                        class="far fa-bookmark"></i></button>
-            </div>
-            <p class="text-xs text-gray-500"><a href="#" class="hover:underline hover:text-blue-500">username2019</a> •
-                2
-                days ago</p>
-        </div>
-    </div>
-
-
-
-    <div class="w-full max-w-sm overflow-hidden rounded-md shadow hoverable">
-        <div class="relative">
-            <div class="h-48 bg-cover bg-no-repeat bg-center"
-                style="background-image: url(https://picsum.photos/245/245">
-            </div>
-            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white bg-purple-900">€ 16.80</div>
+            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white teal darken-2">€ 16.80</div>
             <div class="absolute right-0 w-12 mr-3" style="bottom:-20px;">
                 <a href="#">
                     <img class="rounded-full border-2 border-white"
@@ -147,12 +242,12 @@
 
 
 
-    <div class="w-full max-w-sm overflow-hidden rounded-md shadow hoverable">
+    <div class="w-full overflow-hidden rounded-md shadow hoverable">
         <div class="relative">
             <div class="h-48 bg-cover bg-no-repeat bg-center"
                 style="background-image: url(https://picsum.photos/245/245">
             </div>
-            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white bg-purple-900">€ 16.80</div>
+            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white teal darken-2">€ 16.80</div>
             <div class="absolute right-0 w-12 mr-3" style="bottom:-20px;">
                 <a href="#">
                     <img class="rounded-full border-2 border-white"
@@ -179,12 +274,45 @@
     </div>
 
 
-    <div class="w-full max-w-sm overflow-hidden rounded-md shadow hoverable">
+
+    <div class="w-full overflow-hidden rounded-md shadow hoverable">
         <div class="relative">
             <div class="h-48 bg-cover bg-no-repeat bg-center"
                 style="background-image: url(https://picsum.photos/245/245">
             </div>
-            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white bg-purple-900">€ 16.80</div>
+            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white teal darken-2">€ 16.80</div>
+            <div class="absolute right-0 w-12 mr-3" style="bottom:-20px;">
+                <a href="#">
+                    <img class="rounded-full border-2 border-white"
+                        src="https://randomuser.me/api/portraits/women/17.jpg">
+                </a>
+            </div>
+        </div>
+
+        <div class="px-3 pb-3">
+            <h3 class="mr-10 text-sm truncate-2nd">
+                <a class="text-xl font-medium text-black"
+                    href="/huawwei-p20-pro-complete-set-with-box-a.7186128376">Some Title
+                    Here</a>
+            </h3>
+            <div class="flex items-start justify-between">
+                <p class="text-xs text-gray-500">Quezon City, Metro Manila</p>
+                <button class="outline text-xs text-gray-500 hover:text-blue-500" title="Bookmark this ad"><i
+                        class="far fa-bookmark"></i></button>
+            </div>
+            <p class="text-xs text-gray-500"><a href="#" class="hover:underline hover:text-blue-500">username2019</a> •
+                2
+                days ago</p>
+        </div>
+    </div>
+
+
+    <div class="w-full overflow-hidden rounded-md shadow hoverable">
+        <div class="relative">
+            <div class="h-48 bg-cover bg-no-repeat bg-center"
+                style="background-image: url(https://picsum.photos/245/245">
+            </div>
+            <div class="absolute bottom-0 mb-2 ml-3 px-2 py-1 rounded text-sm text-white teal darken-2">€ 16.80</div>
             <div class="absolute right-0 w-12 mr-3" style="bottom:-20px;">
                 <a href="#">
                     <img class="rounded-full border-2 border-white"
@@ -216,5 +344,20 @@
 
 
 </section>
+
+
+<div class="grid justify-center my-16">
+
+    <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!" class="bg-purple-900">1</a></li>
+        <li class="waves-effect"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+
+</div>
 
 {% endblock %}

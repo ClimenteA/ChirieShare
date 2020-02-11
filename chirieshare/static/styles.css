@@ -10,15 +10,21 @@ main {
     place-content: center center;
 }
 
+.place-items-center {
+    place-items: center center;
+}
+
+label {
+    color: black;
+    font-weight: 500;
+}
 
 .w-420 {
     min-width: 420px;
 }
 
-
-
 @media only screen and (max-width: 501px) {
-    .w-128 {
+    .w-420 {
         width: 100%;
     }
 }
