@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import utilizatori.views as u
+import anunturi.views as a
 
 urlpatterns = [
     path("auth/", u.auth, name="auth"),
+    path("anunturi/", a.anunturi, name="anunturi"),
     path('admin/', admin.site.urls),
 ]
 

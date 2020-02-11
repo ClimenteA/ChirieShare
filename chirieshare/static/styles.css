@@ -10,9 +10,12 @@ main {
     place-content: center center;
 }
 
-.w-128 {
-    width: 448px;
+
+.w-420 {
+    min-width: 420px;
 }
+
+
 
 @media only screen and (max-width: 501px) {
     .w-128 {

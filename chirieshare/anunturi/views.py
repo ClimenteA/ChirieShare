@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def anunturi(request):
+    return render(request, "view_listings.html")
